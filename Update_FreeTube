@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+git clone https://github.com/FreeTubeApp/FreeTube.git
+cd FreeTube
+yarn install
+npm run build
+osascript -e 'quit app "FreeTube"'
+cp -r ~/FreeTube/build/mac-arm64/FreeTube.app /Applications
+trash ~/FreeTube
